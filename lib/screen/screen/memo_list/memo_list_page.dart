@@ -21,7 +21,6 @@ class MemoListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final memoListFailedToLoad =
         AppLocalizations.of(context)?.memoListFailedToLoad ?? "";
-    final memoListTitle = AppLocalizations.of(context)?.memoListTitle ?? "";
     final memoListTabList = AppLocalizations.of(context)?.memoListTabList ?? "";
     final memoListTabDeletedList =
         AppLocalizations.of(context)?.memoListTabDeletedList ?? "";
@@ -44,7 +43,6 @@ class MemoListPage extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            title: Text(memoListTitle),
             bottom: TabBar(
               tabs: <Widget>[
                 Tab(text: memoListTabList),

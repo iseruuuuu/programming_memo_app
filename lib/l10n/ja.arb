@@ -23,7 +23,6 @@
   "memoListActionDelete": "削除する",
   "memoListLoading": "読込中…",
   "memoListFailedToLoad": "メモ一覧を読み込めませんでした",
-  "memoListTitle": "Markdownメモ一覧",
   "memoListTabList": "メモ一覧",
   "memoListTabDeletedList": "削除済みメモ一覧",
   "notifyMemoContentCopied": "見出し内のメモをコピーしました！",

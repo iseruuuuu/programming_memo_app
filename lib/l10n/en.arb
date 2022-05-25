@@ -86,7 +86,6 @@
   "memoListActionDelete": "Delete",
   "memoListLoading": "Loading…",
   "memoListFailedToLoad": "Failed to memo list.",
-  "memoListTitle": "Markdown memo list",
   "memoListTabList": "Activated",
   "memoListTabDeletedList": "Deleted",
   "memoSampleTitle": "Sample memo",
