@@ -29,7 +29,10 @@ class MemoListCardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final contentSummary = (() {
       if (memo.content.length > Constants.memoContentSummaryCounts) {
-        return memo.content.substring(0, Constants.memoContentSummaryCounts) +
+        //TODO 何文字入れるかどうかについては後で決める
+        //TODO StackOverflowしないために、あらかじめ最低大きさを決める。
+        return memo.content
+                .substring(0, Constants.memoContentSummaryCounts + 40) +
             "…";
       } else {
         return memo.content;
@@ -68,44 +71,98 @@ class MemoListCardPage extends StatelessWidget {
             ?.memoCardWillDeleteDays(willDeleteDays ?? -1) ??
         "";
 
-    const cardTitleTextStyle =
-        TextStyle(fontStyle: FontStyle.italic, fontSize: 18);
     const externalPaddingInset = EdgeInsets.all(16);
     const headingPaddingInset = EdgeInsets.all(8);
-    const contentPaddingInset = EdgeInsets.all(4);
-    return Card(
-      child: Padding(
-        padding: externalPaddingInset,
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(memo.title, style: cardTitleTextStyle),
-            const Padding(padding: contentPaddingInset),
-            Text(contentSummary),
-            const Padding(padding: headingPaddingInset),
-            Text(memoCardCreatedAt),
-            const Padding(padding: contentPaddingInset),
-            Text(memoCardLastModifiedAt),
-            const Padding(padding: contentPaddingInset),
-            Text(memoCardLastOpenedAt),
-            const Padding(padding: contentPaddingInset),
-            if (willDeleteDays != null) Text(memoCardWillDeleteDays),
-            if (willDeleteDays != null)
-              const Padding(padding: contentPaddingInset),
-            const Padding(padding: contentPaddingInset),
-            Row(
-              children: actions
-                  .map(
-                    (action) => TextButton.icon(
-                      icon: Icon(action.icons),
-                      label: Text(action.label),
-                      onPressed: () => action.action(memo),
+    const contentPaddingInset = EdgeInsets.all(10);
+
+    return GestureDetector(
+      onDoubleTap: () => actions[0].action(memo),
+      child: Card(
+        elevation: 5,
+        child: Padding(
+          padding: externalPaddingInset,
+          child: Row(
+            children: [
+              Column(
+                // mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    memo.title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
                     ),
-                  )
-                  .toList(),
-            ),
-          ],
+                  ),
+                  const Padding(padding: contentPaddingInset),
+                  Text(
+                    contentSummary,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w300,
+                      fontSize: 15,
+                    ),
+                  ),
+                  const Padding(padding: contentPaddingInset),
+                  if (willDeleteDays != null) Text(memoCardWillDeleteDays),
+                  if (willDeleteDays != null)
+                    const Padding(padding: headingPaddingInset),
+                  const Padding(padding: contentPaddingInset),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: actions
+                        .map(
+                          (action) => TextButton.icon(
+                            icon: Icon(
+                              action.icons,
+                              size: 30,
+                            ),
+                            label: Text(
+                              action.label,
+                              style: const TextStyle(
+                                color: Colors.blueAccent,
+                                fontSize: 20,
+                              ),
+                            ),
+                            onPressed: () => action.action(memo),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ],
+              ),
+              const Spacer(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    memoCardCreatedAt,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Padding(padding: contentPaddingInset),
+                  Text(
+                    memoCardLastModifiedAt,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Padding(padding: contentPaddingInset),
+                  Text(
+                    memoCardLastOpenedAt,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              const Padding(padding: contentPaddingInset),
+            ],
+          ),
         ),
       ),
     );
