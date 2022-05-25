@@ -43,13 +43,12 @@ class MemoPage extends StatelessWidget {
           appBar: AppBar(
             automaticallyImplyLeading: false,
             actions: [
-              TextButton(
+              IconButton(
                 onPressed: openMemoList,
-                child: const Text(
-                  'リスト画面へ',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+                iconSize: 40,
+                icon: const Icon(
+                  Icons.list,
+                  color: Colors.white,
                 ),
               ),
             ],
