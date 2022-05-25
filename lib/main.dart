@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:programming_memo_for_mac_app/screen/container/memo/memo_page.dart';
+import 'package:programming_memo_for_mac_app/screen/container/memo/memo_page_container.dart';
 import 'package:programming_memo_for_mac_app/screen/container/memo_list/memo_list_page_container.dart';
 import 'logger/logger.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -34,18 +34,20 @@ class MyApp extends StatelessWidget {
         Locale('ja', 'JP'),
         Locale('en', 'EN'),
       ],
+      debugShowCheckedModeBanner: false,
       onGenerateTitle: (context) =>
           AppLocalizations.of(context)?.appTitle ?? "",
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.lightGreen,
       ),
       darkTheme: darkTheme.copyWith(
-          indicatorColor: Colors.deepOrange[600],
-          colorScheme: darkTheme.colorScheme.copyWith(
-            primary: CupertinoColors.secondarySystemGroupedBackground,
-            secondary: CupertinoColors.secondarySystemGroupedBackground,
-          )),
+        indicatorColor: Colors.deepOrange[600],
+        colorScheme: darkTheme.colorScheme.copyWith(
+          primary: CupertinoColors.secondarySystemGroupedBackground,
+          secondary: CupertinoColors.secondarySystemGroupedBackground,
+        ),
+      ),
       themeMode: ThemeMode.system,
       routes: {
         '/': (context) => const MemoPageContainer(),
