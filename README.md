@@ -15,7 +15,7 @@
 - [ ] 削除済みリスト載せるのデザイン修正（Card.dart）
 - [ ] consoleに出てくるものをあまり表示させたくない
 - [ ] フォルダーの理解を深める
-
+- [ ]   
 
  
 
@@ -26,6 +26,8 @@
 - [x] MarkDownメモ一覧を削除した。(memo_list_page.dart)
 - [x] 「リスト画面へ」をいい感じのアイコンに変更（memo_page.dart)
 - [x] appBarをgithubみたいにしたい。
+- [x] listのcellのデザインを一新する (memo_list_card_page.dart) 
+- [x] listを2回タップで開けるようにする  (memo_list_card_page.dart) 
 
 ## 具体的な解決方法
 ・入力画面 → リスト画面 ->入力画面にしたい   
