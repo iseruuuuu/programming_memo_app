@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import '../../../../config.dart';
-import '../../../../domain/entities/memo/memo.dart';
+import 'package:programming_memo_for_mac_app/config.dart';
+import 'package:programming_memo_for_mac_app/domain/entities/memo/memo.dart';
 
 class CardAction {
   final IconData icons;
   final String label;
   final Function(Memo memo) action;
+
   const CardAction({
     required this.icons,
     required this.label,
@@ -18,17 +18,19 @@ class CardAction {
 class MemoListCardPage extends StatelessWidget {
   final Memo memo;
   final List<CardAction> actions;
+
   const MemoListCardPage({
     required this.memo,
     required this.actions,
-    Key? key
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final contentSummary = (() {
       if (memo.content.length > Constants.memoContentSummaryCounts) {
-        return memo.content.substring(0, Constants.memoContentSummaryCounts) + "…";
+        return memo.content.substring(0, Constants.memoContentSummaryCounts) +
+            "…";
       } else {
         return memo.content;
       }
@@ -43,7 +45,8 @@ class MemoListCardPage extends StatelessWidget {
     String toDifferenceDateString(DateTime dateTime) {
       final diff = DateTime.now().difference(dateTime);
       if (diff.inDays > 30) {
-        return AppLocalizations.of(context)?.monthsBefore(diff.inDays ~/ 30) ?? "";
+        return AppLocalizations.of(context)?.monthsBefore(diff.inDays ~/ 30) ??
+            "";
       } else if (diff.inDays > 0) {
         return AppLocalizations.of(context)?.daysBefore(diff.inDays) ?? "";
       } else if (diff.inHours > 0) {
@@ -52,17 +55,21 @@ class MemoListCardPage extends StatelessWidget {
       return AppLocalizations.of(context)?.minutesBefore(diff.inMinutes) ?? "";
     }
 
-    final memoCardCreatedAt = AppLocalizations.of(context)?.memoCardCreatedAt(memo.createdAt) ?? "";
-    final memoCardLastModifiedAt = AppLocalizations.of(context)?.memoCardLastModifiedAt(
-        toDifferenceDateString(memo.lastModifiedAt)) ?? "";
-    final memoCardLastOpenedAt = AppLocalizations.of(context)?.memoCardLastOpenedAt(
-        toDifferenceDateString(memo.lastOpenedAt)) ?? "";
-    final memoCardWillDeleteDays = AppLocalizations.of(context)?.memoCardWillDeleteDays(willDeleteDays ?? -1) ?? "";
+    final memoCardCreatedAt =
+        AppLocalizations.of(context)?.memoCardCreatedAt(memo.createdAt) ?? "";
+    final memoCardLastModifiedAt = AppLocalizations.of(context)
+            ?.memoCardLastModifiedAt(
+                toDifferenceDateString(memo.lastModifiedAt)) ??
+        "";
+    final memoCardLastOpenedAt = AppLocalizations.of(context)
+            ?.memoCardLastOpenedAt(toDifferenceDateString(memo.lastOpenedAt)) ??
+        "";
+    final memoCardWillDeleteDays = AppLocalizations.of(context)
+            ?.memoCardWillDeleteDays(willDeleteDays ?? -1) ??
+        "";
 
-    const cardTitleTextStyle = TextStyle(
-        fontStyle: FontStyle.italic,
-        fontSize: 18
-    );
+    const cardTitleTextStyle =
+        TextStyle(fontStyle: FontStyle.italic, fontSize: 18);
     const externalPaddingInset = EdgeInsets.all(16);
     const headingPaddingInset = EdgeInsets.all(8);
     const contentPaddingInset = EdgeInsets.all(4);
@@ -72,7 +79,6 @@ class MemoListCardPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
-
           children: [
             Text(memo.title, style: cardTitleTextStyle),
             const Padding(padding: contentPaddingInset),
@@ -84,21 +90,24 @@ class MemoListCardPage extends StatelessWidget {
             const Padding(padding: contentPaddingInset),
             Text(memoCardLastOpenedAt),
             const Padding(padding: contentPaddingInset),
-            if (willDeleteDays != null)
-              Text(memoCardWillDeleteDays),
+            if (willDeleteDays != null) Text(memoCardWillDeleteDays),
             if (willDeleteDays != null)
               const Padding(padding: contentPaddingInset),
             const Padding(padding: contentPaddingInset),
             Row(
-                children: actions.map((action) => TextButton.icon(
-                  icon: Icon(action.icons),
-                  label: Text(action.label),
-                  onPressed: () => action.action(memo),
-                )).toList()
-            )
+              children: actions
+                  .map(
+                    (action) => TextButton.icon(
+                      icon: Icon(action.icons),
+                      label: Text(action.label),
+                      onPressed: () => action.action(memo),
+                    ),
+                  )
+                  .toList(),
+            ),
           ],
         ),
-      )
+      ),
     );
   }
 }
