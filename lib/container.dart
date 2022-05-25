@@ -1,7 +1,4 @@
-
-
 import 'package:programming_memo_for_mac_app/usecase/memo/memo.dart';
-
 import 'domain/repository/memo/index.dart';
 import 'infra/persistence/database/hive.dart';
 import 'libs/id_generator/id_generator.dart';
