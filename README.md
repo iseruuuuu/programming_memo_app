@@ -1,17 +1,25 @@
 # programming_memo_for_mac_app
 
-A new Flutter project.
+## 現状のアプリ  
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## アップデート内容
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## やりたいこと
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# programming_memo_app
+## やることリスト
+
+- [ ] 
+
+## 完了リスト
+- [x] 起動時のテキストのタイトルを未記入にしたい
+- [x] 起動時のテキストの内容を未記入にしたい
+- [x] 入力画面 → リスト画面 ->入力画面にしたい  →
+
+
+## 具体的な解決方法
+・入力画面 → リスト画面 ->入力画面にしたい   
+ ->WillPopScopeの採用とautomaticallyImplyLeading: false,を採用
+ 
+ 
