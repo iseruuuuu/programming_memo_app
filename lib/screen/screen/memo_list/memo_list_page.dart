@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:programming_memo_for_mac_app/screen/container/memo_list/parts/deleted_memo_list.dart';
@@ -21,10 +22,6 @@ class MemoListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final memoListFailedToLoad =
         AppLocalizations.of(context)?.memoListFailedToLoad ?? "";
-    final memoListTabList = AppLocalizations.of(context)?.memoListTabList ?? "";
-    final memoListTabDeletedList =
-        AppLocalizations.of(context)?.memoListTabDeletedList ?? "";
-
     final errorWidget = ErrorTextWidget(
       errorText: memoListFailedToLoad,
       recoverActionText: "再読み込み",
@@ -42,11 +39,16 @@ class MemoListPage extends StatelessWidget {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
+          backgroundColor: CupertinoColors.extraLightBackgroundGray,
           appBar: AppBar(
-            bottom: TabBar(
+            backgroundColor: Colors.grey.shade800,
+            elevation: 0,
+            bottom: const TabBar(
+              indicatorWeight: 10,
+              indicatorColor: CupertinoColors.extraLightBackgroundGray,
               tabs: <Widget>[
-                Tab(text: memoListTabList),
-                Tab(text: memoListTabDeletedList),
+                Tab(text: 'メモ一覧'),
+                Tab(text: 'ゴミ箱'),
               ],
             ),
             automaticallyImplyLeading: false,

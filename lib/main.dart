@@ -39,10 +39,9 @@ class MyApp extends StatelessWidget {
           AppLocalizations.of(context)?.appTitle ?? "",
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.lightGreen,
       ),
       darkTheme: darkTheme.copyWith(
-        indicatorColor: Colors.deepOrange[600],
+        indicatorColor: CupertinoColors.black,
         colorScheme: darkTheme.colorScheme.copyWith(
           primary: CupertinoColors.secondarySystemGroupedBackground,
           secondary: CupertinoColors.secondarySystemGroupedBackground,

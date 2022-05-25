@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:programming_memo_for_mac_app/screen/container/memo/parts/editor.dart';
@@ -40,7 +41,10 @@ class MemoPage extends StatelessWidget {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
+          backgroundColor: CupertinoColors.extraLightBackgroundGray,
           appBar: AppBar(
+            backgroundColor: Colors.grey.shade800,
+            elevation: 0,
             automaticallyImplyLeading: false,
             actions: [
               IconButton(
@@ -53,6 +57,8 @@ class MemoPage extends StatelessWidget {
               ),
             ],
             bottom: TabBar(
+              indicatorWeight: 10,
+              indicatorColor: CupertinoColors.extraLightBackgroundGray,
               tabs: <Widget>[
                 Tab(text: memoTabEditor),
                 Tab(text: memoTabPreview),
