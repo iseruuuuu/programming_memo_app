@@ -4,6 +4,7 @@ class ErrorTextWidget extends StatelessWidget {
   final String errorText;
   final String recoverActionText;
   final Function() onActionPressed;
+
   const ErrorTextWidget({
     Key? key,
     required this.errorText,
@@ -13,19 +14,21 @@ class ErrorTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const padding = EdgeInsets.all(8);
-
     return Wrap(
-      children: [Column(
-        children: [
-          Text(errorText),
-          const Padding(padding: padding),
-          TextButton(
+      children: [
+        Column(
+          children: [
+            Text(errorText),
+            const Padding(padding: EdgeInsets.all(8)),
+            TextButton(
               onPressed: onActionPressed,
-              child: Text(recoverActionText)
-          ),
-        ],
-      )]
+              child: Text(
+                recoverActionText,
+              ),
+            ),
+          ],
+        )
+      ],
     );
   }
 }
