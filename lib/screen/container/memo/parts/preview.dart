@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../../store/memo/memo_provider.dart';
-import '../../../component/memo/parts/preview.dart';
+import 'package:programming_memo_for_mac_app/screen/screen/memo/parts/preview_widget.dart';
+import 'package:programming_memo_for_mac_app/store/memo/memo_provider.dart';
 
 class PreviewWidgetContainer extends StatelessWidget {
   const PreviewWidgetContainer({Key? key}) : super(key: key);
@@ -16,16 +15,16 @@ class PreviewWidgetContainer extends StatelessWidget {
     }
 
     return Consumer(
-        builder: (context, ref, _) {
-          final memo = ref.watch(memoProvider);
-          final loadingState = ref.watch(memoStateProvider).loadingState;
-          return PreviewWidget(
-            title: memo?.title,
-            content: memo?.content,
-            loadingState: loadingState,
-            onCopyRequested: _onCopyRequested
-          );
-        }
+      builder: (context, ref, _) {
+        final memo = ref.watch(memoProvider);
+        final loadingState = ref.watch(memoStateProvider).loadingState;
+        return PreviewWidget(
+          title: memo?.title,
+          content: memo?.content,
+          loadingState: loadingState,
+          onCopyRequested: _onCopyRequested,
+        );
+      },
     );
   }
 }
