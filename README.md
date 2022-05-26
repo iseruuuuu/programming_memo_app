@@ -19,7 +19,6 @@
 - [ ] StackOverflowしないために、あらかじめ最低大きさを決める。(memo_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
 - [ ] プレビュー画面の大きさ調整
-- [ ] プレビュー画面のmarkdownを黒にしたい！
 - [ ] 削除済みメモがない時の画面を一新したい。
 
 
@@ -41,9 +40,15 @@
 - [x] プレビュー画面のColorを白っぽくする。(preview_widget.dart)
 - [x] プレビュー画面で「# ww」と入力すると、コピーアイコンを削除する（header.dart）
 - [x] プレビュー画面の見出しのサイズをGithubのMarkdownのサイズにした。(header.dart)
+- [x] プレビュー画面のmarkdownを黒にした（markdown_body.dart）
 
 ## 具体的な解決方法
 ・入力画面 → リスト画面 ->入力画面にしたい   
  ->WillPopScopeの採用とautomaticallyImplyLeading: false,を採用
+ 
+ 
+## 参考になったサイト一覧
+[マークダウンにおける見出しのサイズについて]  
+https://zenn.dev/yu_9/articles/yu9-md-fontsize   
  
  
