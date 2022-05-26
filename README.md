@@ -18,7 +18,7 @@
 - [ ] 何文字入れるかどうかについては後で決める(meme_list_card_page.dart)
 - [ ] StackOverflowしないために、あらかじめ最低大きさを決める。(memo_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
-- [ ] TextFieldの色を白にしたい
+
 
 ## 完了リスト
 - [x] 起動時のテキストのタイトルを未記入にしたい
@@ -31,6 +31,7 @@
 - [x] listを2回タップで開けるようにする  (memo_list_card_page.dart) 
 - [x] 「〇〇日後に削除されます」の位置を変更(memo_list_card_page.dart) 
 - [x] 削除リストとメモ一覧の2回タップの処理の分岐を行った(memo_list_card_page.dart) 
+- [x] TextFieldの色を白にしたい(editor_widget.dart)
 
 ## 具体的な解決方法
 ・入力画面 → リスト画面 ->入力画面にしたい   
