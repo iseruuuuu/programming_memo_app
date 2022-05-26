@@ -18,10 +18,12 @@ class CardAction {
 class MemoListCardPage extends StatelessWidget {
   final Memo memo;
   final List<CardAction> actions;
+  final bool isMemo;
 
   const MemoListCardPage({
     required this.memo,
     required this.actions,
+    required this.isMemo,
     Key? key,
   }) : super(key: key);
 
@@ -76,7 +78,9 @@ class MemoListCardPage extends StatelessWidget {
     const contentPaddingInset = EdgeInsets.all(10);
 
     return GestureDetector(
-      onDoubleTap: () => actions[0].action(memo),
+      onDoubleTap: () {
+        isMemo ? actions[0].action(memo) : null;
+      },
       child: Card(
         elevation: 5,
         child: Padding(
@@ -102,10 +106,6 @@ class MemoListCardPage extends StatelessWidget {
                       fontSize: 15,
                     ),
                   ),
-                  const Padding(padding: contentPaddingInset),
-                  if (willDeleteDays != null) Text(memoCardWillDeleteDays),
-                  if (willDeleteDays != null)
-                    const Padding(padding: headingPaddingInset),
                   const Padding(padding: contentPaddingInset),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -135,29 +135,21 @@ class MemoListCardPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    memoCardCreatedAt,
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+                  if (willDeleteDays != null)
+                    Text(
+                      '    ' + memoCardWillDeleteDays,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
                     ),
-                  ),
+                  if (willDeleteDays != null)
+                    const Padding(padding: headingPaddingInset),
+                  Text(memoCardCreatedAt),
                   const Padding(padding: contentPaddingInset),
-                  Text(
-                    memoCardLastModifiedAt,
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  Text(memoCardLastModifiedAt),
                   const Padding(padding: contentPaddingInset),
-                  Text(
-                    memoCardLastOpenedAt,
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  Text(memoCardLastOpenedAt),
                 ],
               ),
               const Padding(padding: contentPaddingInset),
