@@ -40,20 +40,21 @@ class Header extends StatelessWidget {
     final headerId = idGenerator.generate();
     final fontSize = (() {
       switch (level) {
+        //GithubのMarkdownのサイズ
         case 1:
-          return 20.0;
+          return 32.0;
         case 2:
-          return 18.0;
+          return 24.0;
         case 3:
-          return 16.0;
+          return 20.0;
         case 4:
-          return 14.0;
+          return 16.0;
         case 5:
-          return 13.0;
+          return 14.0;
         case 6:
-          return 12.0;
+          return 13.6;
         default:
-          return 12.0;
+          return 8.0;
       }
     })();
     const copyButtonPaddingInset = EdgeInsets.all(16);
