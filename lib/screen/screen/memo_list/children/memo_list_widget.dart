@@ -40,7 +40,23 @@ class MemoListWidgets extends StatelessWidget {
     if (memoList.isEmpty) {
       return Padding(
         padding: externalPaddingInset,
-        child: Text(memoListNoItem),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.browser_not_supported,
+              size: 120,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              memoListNoItem,
+              style: const TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       );
     }
     return ListView(
