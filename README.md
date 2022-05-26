@@ -19,7 +19,7 @@
 - [ ] StackOverflowしないために、あらかじめ最低大きさを決める。(memo_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
 - [ ] プレビュー画面の大きさ調整
-- [ ] プレビュー画面で画像を挿入できるようにしたい。
+- [ ] プレビュー画面のcodeの大きさをMediaQueryにしたい。
 - [ ] 削除済みメモがない時の画面を一新したい。
 
 
@@ -44,6 +44,7 @@
 - [x] プレビュー画面の見出しのサイズをGithubのMarkdownのサイズにした。(header.dart)
 - [x] プレビュー画面のmarkdownを黒にした（markdown_body.dart）
 - [x] プレビュー画面のcodeのPaddingをQiitaと同じにした。(mark_down_body.dart)
+- [x] プレビュー画面で画像を挿入できるようにした。(markdown_body.dart)
 
 ## 具体的な解決方法
 ・入力画面 → リスト画面 ->入力画面にしたい   
