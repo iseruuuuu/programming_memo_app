@@ -65,9 +65,17 @@ class PreviewWidget extends StatelessWidget {
               color: Colors.black,
               thickness: 2,
             ),
-            Text(
-              title ?? memoListLoading,
-              style: titleTextStyle,
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.grey.shade50,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  title ?? memoListLoading,
+                  style: titleTextStyle,
+                  textAlign: TextAlign.start,
+                ),
+              ),
             ),
             const Padding(padding: internalPaddingInset),
             Text(
@@ -79,9 +87,15 @@ class PreviewWidget extends StatelessWidget {
               thickness: 2,
             ),
             const Padding(padding: internalPaddingInset),
-            MarkdownBodyHeaderCopiableContainer(
-              content: content ?? memoListLoading,
-              onCopyRequested: _onCopyRequested,
+
+            //内容
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.grey.shade50,
+              child: MarkdownBodyHeaderCopiableContainer(
+                content: content ?? memoListLoading,
+                onCopyRequested: _onCopyRequested,
+              ),
             ),
           ],
         ),
