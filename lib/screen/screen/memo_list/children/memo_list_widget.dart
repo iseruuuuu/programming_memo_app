@@ -50,6 +50,7 @@ class MemoListWidgets extends StatelessWidget {
             (memo) => MemoListCardPage(
               key: Key(memo.id),
               memo: memo,
+              isMemo: true,
               actions: [
                 CardAction(
                   icons: Icons.file_open,

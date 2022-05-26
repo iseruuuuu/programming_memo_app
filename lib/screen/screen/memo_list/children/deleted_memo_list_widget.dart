@@ -52,6 +52,7 @@ class DeletedMemoListWidgets extends StatelessWidget {
             (memo) => MemoListCardPage(
               key: Key(memo.id),
               memo: memo,
+              isMemo: false,
               actions: [
                 CardAction(
                   icons: Icons.restore,
