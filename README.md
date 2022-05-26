@@ -18,8 +18,6 @@
 - [ ] 何文字入れるかどうかについては後で決める(meme_list_card_page.dart)
 - [ ] StackOverflowしないために、あらかじめ最低大きさを決める。(memo_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
-- [ ] プレビュー画面の大きさ調整
-- [ ] プレビュー画面のcodeの大きさをMediaQueryにしたい。
 - [ ] 削除済みメモがない時の画面を一新したい。
 
 
@@ -45,11 +43,39 @@
 - [x] プレビュー画面のmarkdownを黒にした（markdown_body.dart）
 - [x] プレビュー画面のcodeのPaddingをQiitaと同じにした。(mark_down_body.dart)
 - [x] プレビュー画面で画像を挿入できるようにした。(markdown_body.dart)
+- [x] プレビュー画面の大きさ調整(markdown_body.dart, pre.dart)
+- [x] プレビュー画面のcodeの大きさをMediaQueryにする(markdown_body.dart, pre.dart)
+
+
+## markdownOKリスト
+- [x] 見出し
+- [x] リンクの挿入
+- [x] 画像の挿入
+- [x] テーブルの挿入
+- [x] 水平線
+- [x] 打ち消し線
+
+- [△] リスト
+- [△] インライン表示
+
+- [] 番号付きリスト
+- [] 太文字
+- [] 注釈
+- [] 空行・改行
+- [] コードの挿入
+- [] 引用
+- [] 画像の挿入（サイズ指定）
+- [] 文字色
+- [] 斜体
+
+- [] マークダウンのエスケープ
+- [] 
 
 ## 具体的な解決方法
 ・入力画面 → リスト画面 ->入力画面にしたい   
  ->WillPopScopeの採用とautomaticallyImplyLeading: false,を採用
  
+
  
 ## 参考になったサイト一覧
 [マークダウンにおける見出しのサイズについて]  
