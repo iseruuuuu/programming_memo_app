@@ -83,26 +83,27 @@ class CustomHeaderBuilder extends MarkdownElementBuilder {
   int occurrence = 0;
   int level = 1;
 
-  CustomHeaderBuilder(
-      {required this.content,
-      required this.onHeaderFound,
-      required this.onCopyRequested});
+  CustomHeaderBuilder({
+    required this.content,
+    required this.onHeaderFound,
+    required this.onCopyRequested,
+  });
 
   @override
   void visitElementBefore(md.Element element) {
     super.visitElementBefore(element);
-
     occurrence = onHeaderFound(element.tag, element.textContent);
   }
 
   @override
   Widget visitText(md.Text text, TextStyle? preferredStyle) {
     return Header(
-        text: text.text,
-        content: content,
-        occurrence: occurrence,
-        level: level,
-        onCopyRequested: onCopyRequested);
+      text: text.text,
+      content: content,
+      occurrence: occurrence,
+      level: level,
+      onCopyRequested: onCopyRequested,
+    );
   }
 }
 
