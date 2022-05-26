@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:programming_memo_for_mac_app/screen/screen/memo/parts/markdown_builder/header.dart';
+import 'package:programming_memo_for_mac_app/screen/screen/memo/parts/markdown_builder/pre.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
@@ -22,17 +23,6 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final _onCopyRequested = onCopyRequested;
     return MarkdownBody(
-      styleSheet: MarkdownStyleSheet(
-        codeblockPadding: const EdgeInsets.all(40),
-        codeblockDecoration: const BoxDecoration(
-          color: Color(0xFF2F3C40),
-        ),
-        code: const TextStyle(
-          color: Colors.white,
-          backgroundColor: Color(0xFF2F3C40),
-          fontSize: 17,
-        ),
-      ),
       data: content,
       selectable: true,
       imageBuilder: (uri, title, alt) {
@@ -79,6 +69,7 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
           onHeaderFound: add,
           onCopyRequested: _onCopyRequested,
         ),
+        'pre': CustomPreBuilder(),
       },
     );
   }
