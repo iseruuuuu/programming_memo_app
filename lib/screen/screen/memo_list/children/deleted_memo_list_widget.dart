@@ -47,14 +47,14 @@ class DeletedMemoListWidgets extends StatelessWidget {
           children: [
             const Icon(
               Icons.delete_forever,
-              size: 120,
+              size: 130,
             ),
             const SizedBox(height: 10),
             Text(
               memoDeletedListNoItem,
               style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w900,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ],
