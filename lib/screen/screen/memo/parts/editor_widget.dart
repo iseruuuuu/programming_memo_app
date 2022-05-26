@@ -3,7 +3,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:programming_memo_for_mac_app/screen/screen/loading.dart';
 import 'package:programming_memo_for_mac_app/store/loading_state.dart';
 
-
 class EditorWidget extends StatelessWidget {
   final String? title;
   final String? content;
@@ -51,6 +50,8 @@ class EditorWidget extends StatelessWidget {
             ),
             TextFormField(
               decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
                 border: outlineInputBorder,
                 hintText: memoTitleHint,
               ),
@@ -64,6 +65,8 @@ class EditorWidget extends StatelessWidget {
             ),
             TextFormField(
               decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
                 border: outlineInputBorder,
                 hintText: memoContentHint,
               ),
