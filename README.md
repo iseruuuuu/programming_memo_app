@@ -18,6 +18,8 @@
 - [ ] 何文字入れるかどうかについては後で決める(meme_list_card_page.dart)
 - [ ] StackOverflowしないために、あらかじめ最低大きさを決める。(memo_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
+- [ ] cellがStackoverflowをしている。
+- [ ] 
 
 ## 完了リスト
 - [x] 起動時のテキストのタイトルを未記入にしたい
@@ -43,7 +45,7 @@
 - [x] プレビュー画面の大きさ調整(markdown_body.dart, pre.dart)
 - [x] プレビュー画面のcodeの大きさをMediaQueryにする(markdown_body.dart, pre.dart)
 - [x] 削除済みメモがない時の画面を一新した（deleted_memo_list_widget.dart）
-
+- [x] メモ一覧のメモがない時の画面を一新した（memo_list_widget.dart）
 
 ## markdownOKリスト
 - [x] 見出し
