@@ -22,6 +22,13 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final _onCopyRequested = onCopyRequested;
     return MarkdownBody(
+      styleSheet: MarkdownStyleSheet(
+        codeblockDecoration: const BoxDecoration(color: Color(0xFF2F3C40)),
+        code: const TextStyle(
+          color: Colors.white,
+          backgroundColor: Color(0xFF2F3C40),
+        ),
+      ),
       data: content,
       onTapLink: (_, url, __) {
         if (url != null) {
