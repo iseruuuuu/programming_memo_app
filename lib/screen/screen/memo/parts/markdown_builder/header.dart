@@ -70,15 +70,6 @@ class Header extends StatelessWidget {
           ),
         ),
         const Padding(padding: copyButtonPaddingInset),
-        IconButton(
-          onPressed: () {
-            final copyText = _extractCopyText();
-            if (copyText != null) {
-              onCopyRequested(copyText);
-            }
-          },
-          icon: const Icon(Icons.copy),
-        ),
       ],
     );
   }
