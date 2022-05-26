@@ -34,6 +34,14 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
         ),
       ),
       data: content,
+      selectable: true,
+      imageBuilder: (uri, title, alt) {
+        return Center(
+          child: Image.network(
+            uri.toString(),
+          ),
+        );
+      },
       onTapLink: (_, url, __) {
         if (url != null) {
           final uri = Uri.parse(url);
