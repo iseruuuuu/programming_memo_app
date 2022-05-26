@@ -61,15 +61,19 @@ class MemoListPage extends StatelessWidget {
               DeletedMemoListWidgetsContainer(errorWidget: errorWidget),
             ],
           ),
-          floatingActionButton: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              FloatingActionButton(
-                heroTag: "createMemo",
-                child: const Icon(Icons.add),
-                onPressed: createMemo,
+          floatingActionButton: SizedBox(
+            width: 80,
+            height: 80,
+            child: FloatingActionButton(
+              heroTag: "createMemo",
+              backgroundColor: Colors.grey.shade800,
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
+                size: 40,
               ),
-            ],
+              onPressed: createMemo,
+            ),
           ),
         ),
       ),

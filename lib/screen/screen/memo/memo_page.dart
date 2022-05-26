@@ -71,24 +71,19 @@ class MemoPage extends StatelessWidget {
               PreviewWidgetContainer(),
             ],
           ),
-          floatingActionButton: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // FloatingActionButton(
-              //   heroTag: "openMemoList",
-              //   child: const Icon(Icons.list),
-              //   onPressed: openMemoList,
-              // ),
-              const Padding(padding: fabPaddingInset),
-              FloatingActionButton(
-                heroTag: "storeMemo",
-                child: const Icon(
-                  Icons.save_alt,
-                  color: Colors.white,
-                ),
-                onPressed: _storeMemo,
-              )
-            ],
+          floatingActionButton: SizedBox(
+            width: 80,
+            height: 80,
+            child: FloatingActionButton(
+              heroTag: "storeMemo",
+              backgroundColor: Colors.grey.shade800,
+              child: const Icon(
+                Icons.save_alt,
+                color: Colors.white,
+                size: 40,
+              ),
+              onPressed: _storeMemo,
+            ),
           ),
         ),
       ),
