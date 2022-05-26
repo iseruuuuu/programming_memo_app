@@ -19,8 +19,9 @@
 - [ ] StackOverflowしないために、あらかじめ最低大きさを決める。(memo_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
 - [ ] プレビュー画面の大きさ調整
-- [ ] プレビュー画面で「# ww」と入力すると、コピーアイコンが出る→削除したい。
+
 - [ ] プレビュー画面のmarkdownを黒にしたい！
+- [ ] 
 - [ ] 削除済みメモがない時の画面を一新したい。
 
 
@@ -40,6 +41,7 @@
 - [x] FloatingButtonの色・サイズを変更する。(memo_page.dart)
 - [x] プレビュー画面の大きさを全体的にする。(preview_widget.dart)
 - [x] プレビュー画面のColorを白っぽくする。(preview_widget.dart)
+- [x] プレビュー画面で「# ww」と入力すると、コピーアイコンを削除する（header.dart）
 
 ## 具体的な解決方法
 ・入力画面 → リスト画面 ->入力画面にしたい   
