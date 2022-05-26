@@ -42,7 +42,23 @@ class DeletedMemoListWidgets extends StatelessWidget {
     if (deletedMemoList.isEmpty) {
       return Padding(
         padding: externalPaddingInset,
-        child: Text(memoDeletedListNoItem),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.delete_forever,
+              size: 120,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              memoDeletedListNoItem,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+          ],
+        ),
       );
     }
     return ListView(
