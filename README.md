@@ -52,6 +52,7 @@
 - [x] プレビュー画面のwaringのデザインを実装した(markdown_body.dartとpre.dart)
 - [x] プレビュー画面の補足説明（veryWaring,littleWaring,information）の３つを作成した。(markdown_body.dartとpre.dart)
 - [x] veryWaring・littleWaring・informationの横にそれぞれアイコンを足してあげた（per.dart）
+- [x] プレビュー画面の太文字をできるようにした(markdown_body.dartとper.dart)
 
 ## markdownOKリスト
 - [x] 見出し
@@ -64,12 +65,13 @@
 - [x] veryWaringの出現
 - [x] littleWaringの出現
 - [x] informationの出現
+- [x] 太文字
 
 - [ ] リスト(妥協)
 - [ ] インライン表示
 
 - [ ] 番号付きリスト
-- [ ] 太文字
+
 - [ ] 注釈
 - [ ] 空行・改行
 - [ ] コードの挿入
