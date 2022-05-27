@@ -46,6 +46,7 @@
 - [x] プレビュー画面のcodeの大きさをMediaQueryにする(markdown_body.dart, pre.dart)
 - [x] 削除済みメモがない時の画面を一新した（deleted_memo_list_widget.dart）
 - [x] メモ一覧のメモがない時の画面を一新した（memo_list_widget.dart）
+- [x] プレビュー画面のwaringのデザインを実装した(markdown_body.dartとpre.dart)
 
 ## markdownOKリスト
 - [x] 見出し
@@ -54,22 +55,22 @@
 - [x] テーブルの挿入
 - [x] 水平線
 - [x] 打ち消し線
+- [x] waringの出現
 
-- [△] リスト
-- [△] インライン表示
+- [ ] リスト(妥協)
+- [ ] インライン表示
 
-- [] 番号付きリスト
-- [] 太文字
-- [] 注釈
-- [] 空行・改行
-- [] コードの挿入
-- [] 引用
-- [] 画像の挿入（サイズ指定）
-- [] 文字色
-- [] 斜体
+- [ ] 番号付きリスト
+- [ ] 太文字
+- [ ] 注釈
+- [ ] 空行・改行
+- [ ] コードの挿入
+- [ ] 引用
+- [ ] 画像の挿入（サイズ指定）
+- [ ] 文字色
+- [ ] 斜体
 
-- [] マークダウンのエスケープ
-- [] 
+- [ ] マークダウンのエスケープ
 
 ## 具体的な解決方法
 ・入力画面 → リスト画面 ->入力画面にしたい   
@@ -80,5 +81,7 @@
 ## 参考になったサイト一覧
 [マークダウンにおける見出しのサイズについて]  
 https://zenn.dev/yu_9/articles/yu9-md-fontsize   
- 
- 
+[【Flutter】flutter_markdown で見た目をカスタマイズする]
+https://zenn.dev/k_shir0/articles/a4fb94315ac89a
+[waringのmarkdownを出すやつ]
+ https://github.com/flutter/flutter/issues/96608
