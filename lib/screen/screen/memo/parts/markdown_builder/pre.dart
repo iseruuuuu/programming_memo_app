@@ -291,3 +291,39 @@ class InformationBuilder extends MarkdownElementBuilder {
     );
   }
 }
+
+//TODO Boldに対して使用可能！！
+class BoldSyntax extends md.BlockSyntax {
+  static const String _pattern = r'^\*\*\*\*(.*)$';
+
+  @override
+  RegExp get pattern => RegExp(_pattern);
+
+  BoldSyntax();
+
+  @override
+  md.Node parse(md.BlockParser parser) {
+    var childLines = parseChildLines(parser);
+    var content = childLines.join('\n');
+    final md.Element el = md.Element('p', [
+      md.Element('bold', [md.Text(content)]),
+    ]);
+    return el;
+  }
+}
+
+class BoldBuilder extends MarkdownElementBuilder {
+  @override
+  Widget visitElementAfter(md.Element element, TextStyle? preferredStyle) {
+    return Builder(
+      builder: (context) {
+        return Text(
+          element.textContent,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        );
+      },
+    );
+  }
+}

@@ -43,6 +43,7 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
         VeryWarningSyntax(),
         LittleWarningSyntax(),
         InformationSyntax(),
+        BoldSyntax(),
       ],
       builders: <String, MarkdownElementBuilder>{
         'h1': CustomHeader1Builder(
@@ -80,6 +81,7 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
         'verywaring': VeryWarningBuilder(),
         'littlewaring': LittleWarningBuilder(),
         'information': InformationBuilder(),
+        'bold': BoldBuilder(),
       },
     );
   }
