@@ -16,10 +16,13 @@
 - [ ] consoleに出てくるものをあまり表示させたくない
 - [ ] フォルダーの理解を深める
 - [ ] 何文字入れるかどうかについては後で決める(meme_list_card_page.dart)
-- [ ] StackOverflowしないために、あらかじめ最低大きさを決める。(memo_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
-- [ ] cellがStackoverflowをしている。
 - [ ] 
+
+## errorリスト
+- [ ] cellがStackoverflowをしている。
+- [ ] veryWaring・littleWaring・informationがStackOverFlowしている。
+- [ ] StackOverflowしないために、あらかじめ最低大きさを決める。(memo_list_card_page.dart)
 
 ## 完了リスト
 - [x] 起動時のテキストのタイトルを未記入にしたい
@@ -48,6 +51,7 @@
 - [x] メモ一覧のメモがない時の画面を一新した（memo_list_widget.dart）
 - [x] プレビュー画面のwaringのデザインを実装した(markdown_body.dartとpre.dart)
 - [x] プレビュー画面の補足説明（veryWaring,littleWaring,information）の３つを作成した。(markdown_body.dartとpre.dart)
+- [x] veryWaring・littleWaring・informationの横にそれぞれアイコンを足してあげた（per.dart）
 
 ## markdownOKリスト
 - [x] 見出し
