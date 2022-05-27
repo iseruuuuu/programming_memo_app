@@ -153,9 +153,14 @@ class VeryWarningBuilder extends MarkdownElementBuilder {
               color: Color(0xFFFEE8EB),
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
+                const Icon(
+                  Icons.cancel,
+                  color: Colors.red,
+                  size: 40,
+                ),
+                const SizedBox(width: 5),
                 Text(
                   element.textContent,
                   style: const TextStyle(
@@ -206,9 +211,14 @@ class LittleWarningBuilder extends MarkdownElementBuilder {
               color: Color(0xFFFDF8DE),
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
+                const Icon(
+                  Icons.error,
+                  color: Color(0xFFF69B2F),
+                  size: 40,
+                ),
+                const SizedBox(width: 5),
                 Text(
                   element.textContent,
                   style: const TextStyle(
@@ -259,9 +269,14 @@ class InformationBuilder extends MarkdownElementBuilder {
               color: Color(0xFFDFF6DA),
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
+                const Icon(
+                  Icons.check_circle,
+                  color: Color(0xFF4BBD00),
+                  size: 40,
+                ),
+                const SizedBox(width: 5),
                 Text(
                   element.textContent,
                   style: const TextStyle(
