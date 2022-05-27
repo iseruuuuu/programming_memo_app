@@ -38,7 +38,12 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
           launchUrl(uri);
         }
       },
-      blockSyntaxes: [B2BlockSyntax()],
+      blockSyntaxes: [
+        B2BlockSyntax(),
+        VeryWarningSyntax(),
+        LittleWarningSyntax(),
+        InformationSyntax(),
+      ],
       builders: <String, MarkdownElementBuilder>{
         'h1': CustomHeader1Builder(
           content: content,
@@ -72,6 +77,9 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
         ),
         'pre': CustomPreBuilder(),
         'warning': WarningBuilder(),
+        'verywaring': VeryWarningBuilder(),
+        'littlewaring': LittleWarningBuilder(),
+        'information': InformationBuilder(),
       },
     );
   }

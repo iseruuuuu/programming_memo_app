@@ -61,6 +61,7 @@ class CustomPreBuilder extends MarkdownElementBuilder {
   }
 }
 
+//TODO waringに対して使用可能！！
 class B2BlockSyntax extends md.BlockSyntax {
   static const String _pattern = r'^\[\[warning\]\](.*)$';
 
@@ -80,7 +81,6 @@ class B2BlockSyntax extends md.BlockSyntax {
   }
 }
 
-//TODO waringに対して使用可能！！
 class WarningBuilder extends MarkdownElementBuilder {
   @override
   Widget visitElementAfter(md.Element element, TextStyle? preferredStyle) {
@@ -111,6 +111,165 @@ class WarningBuilder extends MarkdownElementBuilder {
                 style: preferredStyle,
               ),
             ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+//TODO Verywaringに対して使用可能！！
+class VeryWarningSyntax extends md.BlockSyntax {
+  static const String _pattern = r'^\[\[verywaring\]\](.*)$';
+
+  @override
+  RegExp get pattern => RegExp(_pattern);
+
+  VeryWarningSyntax();
+
+  @override
+  md.Node parse(md.BlockParser parser) {
+    var childLines = parseChildLines(parser);
+    var content = childLines.join('\n');
+    final md.Element el = md.Element('p', [
+      md.Element('verywaring', [md.Text(content)]),
+    ]);
+    return el;
+  }
+}
+
+class VeryWarningBuilder extends MarkdownElementBuilder {
+  @override
+  Widget visitElementAfter(md.Element element, TextStyle? preferredStyle) {
+    return Builder(
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(vertical: 15),
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+              color: Color(0xFFFEE8EB),
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  element.textContent,
+                  style: const TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+//TODO LittleWaringに対して使用可能！！
+class LittleWarningSyntax extends md.BlockSyntax {
+  static const String _pattern = r'^\[\[littlewaring\]\](.*)$';
+
+  @override
+  RegExp get pattern => RegExp(_pattern);
+
+  LittleWarningSyntax();
+
+  @override
+  md.Node parse(md.BlockParser parser) {
+    var childLines = parseChildLines(parser);
+    var content = childLines.join('\n');
+    final md.Element el = md.Element('p', [
+      md.Element('littlewaring', [md.Text(content)]),
+    ]);
+    return el;
+  }
+}
+
+class LittleWarningBuilder extends MarkdownElementBuilder {
+  @override
+  Widget visitElementAfter(md.Element element, TextStyle? preferredStyle) {
+    return Builder(
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(vertical: 15),
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+              color: Color(0xFFFDF8DE),
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  element.textContent,
+                  style: const TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+//TODO informationに対して使用可能！！
+class InformationSyntax extends md.BlockSyntax {
+  static const String _pattern = r'^\[\[information\]\](.*)$';
+
+  @override
+  RegExp get pattern => RegExp(_pattern);
+
+  InformationSyntax();
+
+  @override
+  md.Node parse(md.BlockParser parser) {
+    var childLines = parseChildLines(parser);
+    var content = childLines.join('\n');
+    final md.Element el = md.Element('p', [
+      md.Element('information', [md.Text(content)]),
+    ]);
+    return el;
+  }
+}
+
+class InformationBuilder extends MarkdownElementBuilder {
+  @override
+  Widget visitElementAfter(md.Element element, TextStyle? preferredStyle) {
+    return Builder(
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(vertical: 15),
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+              color: Color(0xFFDFF6DA),
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  element.textContent,
+                  style: const TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       },
