@@ -47,6 +47,7 @@
 - [x] 削除済みメモがない時の画面を一新した（deleted_memo_list_widget.dart）
 - [x] メモ一覧のメモがない時の画面を一新した（memo_list_widget.dart）
 - [x] プレビュー画面のwaringのデザインを実装した(markdown_body.dartとpre.dart)
+- [x] プレビュー画面の補足説明（veryWaring,littleWaring,information）の３つを作成した。(markdown_body.dartとpre.dart)
 
 ## markdownOKリスト
 - [x] 見出し
@@ -56,6 +57,9 @@
 - [x] 水平線
 - [x] 打ち消し線
 - [x] waringの出現
+- [x] veryWaringの出現
+- [x] littleWaringの出現
+- [x] informationの出現
 
 - [ ] リスト(妥協)
 - [ ] インライン表示
