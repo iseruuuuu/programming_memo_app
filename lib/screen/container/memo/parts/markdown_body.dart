@@ -38,7 +38,8 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
           launchUrl(uri);
         }
       },
-      builders: {
+      blockSyntaxes: [B2BlockSyntax()],
+      builders: <String, MarkdownElementBuilder>{
         'h1': CustomHeader1Builder(
           content: content,
           onHeaderFound: add,
@@ -70,6 +71,7 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
           onCopyRequested: _onCopyRequested,
         ),
         'pre': CustomPreBuilder(),
+        'warning': WarningBuilder(),
       },
     );
   }
