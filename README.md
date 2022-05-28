@@ -17,12 +17,13 @@
 - [ ] フォルダーの理解を深める
 - [ ] 何文字入れるかどうかについては後で決める(meme_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
-- [ ] macOSの時のプレビュー画面では、FontWeight.boldが効いていない？
+- [ ] ショートカット入力はできるようにする。
 
 ## errorリスト
 - [ ] cellがStackoverflowをしている。
-- [ ] veryWaring・littleWaring・informationがStackOverFlowしている。
 - [ ] StackOverflowしないために、あらかじめ最低大きさを決める。(memo_list_card_page.dart)
+- [ ] macOSの時のプレビュー画面では、FontWeight.boldが効いていない？
+- [ ] テキストフィールドの操作の確認をする
 
 ## 完了リスト
 - [x] 起動時のテキストのタイトルを未記入にしたい
@@ -53,9 +54,10 @@
 - [x] プレビュー画面の補足説明（veryWaring,littleWaring,information）の３つを作成した。(markdown_body.dartとpre.dart)
 - [x] veryWaring・littleWaring・informationの横にそれぞれアイコンを足してあげた（per.dart）
 - [x] プレビュー画面の太文字をできるようにした(markdown_body.dartとper.dart)
-- [x] プレビュー画面のColor型が入力できるようにした。
-- [x] プレビュー画面の引用(1)を別の形で入力できるようにした。
-- [x] プレビュー画面の多重引用を別の形で入力できるようにした。
+- [x] プレビュー画面のColor型が入力できるようにした。(markdown_body.dartとper.dart)
+- [x] プレビュー画面の引用(1)を別の形で入力できるようにした。(markdown_body.dartとper.dart)
+- [x] プレビュー画面の多重引用を別の形で入力できるようにした。(markdown_body.dartとper.dart)
+- [x] veryWaring・littleWaring・informationがStackOverFlowしないようにした。(per.dart)
 
 ## markdownOKリスト
 - [x] 見出し
@@ -72,27 +74,20 @@
 - [x] コードスパンの中身がCSSの <color> 型
 - [x] Blockquotes - 引用
 - [x] Blockquotes - 多重引用
+- [x] 斜体
 
 
 - [ ] 折りたたみ
 [https://qiita.com/Qiita/items/c686397e4a0f4f11683d]
-
 - [ ] チェックボックス(デザインを修正したい。。)
-
 - [ ] リスト(妥協)
 - [ ] インライン表示
-
 - [ ] 番号付きリスト
-
 - [ ] 注釈
 - [ ] 空行・改行
 - [ ] コードの挿入
-
-
 - [ ] 画像の挿入（サイズ指定）
 - [ ] 文字色
-- [ ] 斜体
-
 - [ ] マークダウンのエスケープ
 
 ## 具体的な解決方法
@@ -108,3 +103,5 @@ https://zenn.dev/yu_9/articles/yu9-md-fontsize
 https://zenn.dev/k_shir0/articles/a4fb94315ac89a
 [waringのmarkdownを出すやつ]
  https://github.com/flutter/flutter/issues/96608
+[文字から空白文字を全て削除する方法]
+ [https://qiita.com/blendthink/items/3a70a3ee5b72e5f4e2bc]
