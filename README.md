@@ -13,11 +13,11 @@
 - [ ] テキストの修正
 - [ ] リスト画面のセルのデザイン修正（Card.dart）
 - [ ] 削除済みリスト載せるのデザイン修正（Card.dart）
-- [ ] consoleに出てくるものをあまり表示させたくない
 - [ ] フォルダーの理解を深める
 - [ ] 何文字入れるかどうかについては後で決める(meme_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
 - [ ] ショートカット入力はできるようにする。
+- [ ] 保存の確認を行いたい。
 
 ## errorリスト
 - [ ] macOSの時のプレビュー画面では、FontWeight.boldが効いていない？
@@ -59,6 +59,7 @@
 - [x] アプリのMaxサイズとMinサイズを決めた
 - [x] h1~h6までのStackOverFlowしないようにした。(hearer.dart)
 - [x] cellがStackOverFlowしないようにした(memo_list_card_page.dart)
+- [x] consoleに出てくるものを表示させないようにした（logger.dart）
 
 ## markdownOKリスト
 - [x] 見出し
