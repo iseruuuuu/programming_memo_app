@@ -17,7 +17,7 @@
 - [ ] フォルダーの理解を深める
 - [ ] 何文字入れるかどうかについては後で決める(meme_list_card_page.dart)
 - [ ] 「開く」と「削除」のボタンのデザインを一新する(memo_list_card_page.dart)
-- [ ] 
+- [ ] macOSの時のプレビュー画面では、FontWeight.boldが効いていない？
 
 ## errorリスト
 - [ ] cellがStackoverflowをしている。
@@ -53,6 +53,7 @@
 - [x] プレビュー画面の補足説明（veryWaring,littleWaring,information）の３つを作成した。(markdown_body.dartとpre.dart)
 - [x] veryWaring・littleWaring・informationの横にそれぞれアイコンを足してあげた（per.dart）
 - [x] プレビュー画面の太文字をできるようにした(markdown_body.dartとper.dart)
+- [x] プレビュー画面のColor型が入力できるようにした。
 
 ## markdownOKリスト
 - [x] 見出し
@@ -67,6 +68,7 @@
 - [x] informationの出現
 - [x] 太文字
 
+- [ ] コードスパンの中身がCSSの <color> 型
 - [ ] リスト(妥協)
 - [ ] インライン表示
 
