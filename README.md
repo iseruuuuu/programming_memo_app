@@ -21,7 +21,6 @@
 
 ## errorリスト
 - [ ] cellがStackoverflowをしている。
-
 - [ ] macOSの時のプレビュー画面では、FontWeight.boldが効いていない？
 - [ ] テキストフィールドの操作の確認をする
 
@@ -59,6 +58,7 @@
 - [x] プレビュー画面の多重引用を別の形で入力できるようにした。(markdown_body.dartとper.dart)
 - [x] veryWaring・littleWaring・informationがStackOverFlowしないようにした。(per.dart)
 - [x] アプリのMaxサイズとMinサイズを決めた
+- [x] h1~h6までのStackOverFlowしないようにした。(hearer.dart)
 
 ## markdownOKリスト
 - [x] 見出し
