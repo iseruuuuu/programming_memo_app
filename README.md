@@ -67,8 +67,8 @@
 - [x] littleWaringの出現
 - [x] informationの出現
 - [x] 太文字
+- [x] コードスパンの中身がCSSの <color> 型
 
-- [ ] コードスパンの中身がCSSの <color> 型
 - [ ] リスト(妥協)
 - [ ] インライン表示
 
