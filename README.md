@@ -20,7 +20,6 @@
 - [ ] ショートカット入力はできるようにする。
 
 ## errorリスト
-- [ ] cellがStackoverflowをしている。
 - [ ] macOSの時のプレビュー画面では、FontWeight.boldが効いていない？
 - [ ] テキストフィールドの操作の確認をする
 
@@ -59,6 +58,7 @@
 - [x] veryWaring・littleWaring・informationがStackOverFlowしないようにした。(per.dart)
 - [x] アプリのMaxサイズとMinサイズを決めた
 - [x] h1~h6までのStackOverFlowしないようにした。(hearer.dart)
+- [x] cellがStackOverFlowしないようにした(memo_list_card_page.dart)
 
 ## markdownOKリスト
 - [x] 見出し
