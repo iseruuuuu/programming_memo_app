@@ -327,3 +327,57 @@ class BoldBuilder extends MarkdownElementBuilder {
     );
   }
 }
+
+//TODO Colorに対して使用可能！！
+class ColorSyntax extends md.BlockSyntax {
+  static const String _pattern = r'^\[\[color\]\](.*)$';
+
+  @override
+  RegExp get pattern => RegExp(_pattern);
+
+  ColorSyntax();
+
+  @override
+  md.Node parse(md.BlockParser parser) {
+    var childLines = parseChildLines(parser);
+    var content = childLines.join('\n');
+    final md.Element el = md.Element('p', [
+      md.Element('color', [md.Text(content)]),
+    ]);
+    return el;
+  }
+}
+
+class ColorBuilder extends MarkdownElementBuilder {
+  @override
+  Widget visitElementAfter(md.Element element, TextStyle? preferredStyle) {
+    var color = '0xFF' + element.textContent.trim();
+    var colors = color.replaceAll(RegExp(r'\s'), '');
+    var colorCode = int.parse(colors);
+    return Builder(
+      builder: (context) {
+        return colorCode.toString().length == 10
+            ? Row(
+                children: [
+                  const SizedBox(width: 10),
+                  Container(
+                    width: 30,
+                    height: 30,
+                    color: Color(colorCode),
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    color,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              )
+            : Text(element.textContent);
+      },
+    );
+  }
+}
