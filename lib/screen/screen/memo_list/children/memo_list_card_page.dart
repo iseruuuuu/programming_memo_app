@@ -87,59 +87,62 @@ class MemoListCardPage extends StatelessWidget {
           padding: externalPaddingInset,
           child: Row(
             children: [
-              Column(
-                // mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    memo.title,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      memo.title,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
-                  ),
-                  const Padding(padding: contentPaddingInset),
-                  Text(
-                    contentSummary,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 15,
+                    const Padding(padding: contentPaddingInset),
+                    Text(
+                      contentSummary,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w300,
+                        fontSize: 15,
+                      ),
                     ),
-                  ),
-                  const Padding(padding: contentPaddingInset),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: actions
-                        .map(
-                          (action) => TextButton.icon(
-                            icon: Icon(
-                              action.icons,
-                              size: 30,
-                            ),
-                            label: Text(
-                              action.label,
-                              style: const TextStyle(
-                                color: Colors.blueAccent,
-                                fontSize: 20,
+                    const Padding(padding: contentPaddingInset),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: actions
+                          .map(
+                            (action) => TextButton.icon(
+                              icon: Icon(
+                                action.icons,
+                                size: 30,
                               ),
+                              label: Text(
+                                action.label,
+                                style: const TextStyle(
+                                  color: Colors.blueAccent,
+                                  fontSize: 20,
+                                ),
+                              ),
+                              onPressed: () => action.action(memo),
                             ),
-                            onPressed: () => action.action(memo),
-                          ),
-                        )
-                        .toList(),
-                  ),
-                ],
+                          )
+                          .toList(),
+                    ),
+                  ],
+                ),
               ),
-              const Spacer(),
+              // const Spacer(),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   if (willDeleteDays != null)
                     Text(
-                      '    ' + memoCardWillDeleteDays,
+                      memoCardWillDeleteDays,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
+                        color: Colors.red,
                         fontSize: 18,
                       ),
                     ),
