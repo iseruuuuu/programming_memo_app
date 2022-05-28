@@ -45,6 +45,7 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
         InformationSyntax(),
         BoldSyntax(),
         ColorSyntax(),
+        Quote1Syntax(),
       ],
       builders: <String, MarkdownElementBuilder>{
         'h1': CustomHeader1Builder(
@@ -84,6 +85,7 @@ class MarkdownBodyHeaderCopiableContainer extends StatelessWidget {
         'information': InformationBuilder(),
         'bold': BoldBuilder(),
         'color': ColorBuilder(),
+        'Q1': Quote1Builder(),
       },
     );
   }
