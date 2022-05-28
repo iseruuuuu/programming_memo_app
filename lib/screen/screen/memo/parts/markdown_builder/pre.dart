@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -161,10 +162,13 @@ class VeryWarningBuilder extends MarkdownElementBuilder {
                   size: 40,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  element.textContent,
-                  style: const TextStyle(
-                    fontSize: 18,
+                Expanded(
+                  child: AutoSizeText(
+                    element.textContent,
+                    style: const TextStyle(fontSize: 18),
+                    minFontSize: 18,
+                    maxLines: 100,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
@@ -219,10 +223,13 @@ class LittleWarningBuilder extends MarkdownElementBuilder {
                   size: 40,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  element.textContent,
-                  style: const TextStyle(
-                    fontSize: 18,
+                Expanded(
+                  child: AutoSizeText(
+                    element.textContent,
+                    style: const TextStyle(fontSize: 18),
+                    minFontSize: 18,
+                    maxLines: 100,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
@@ -277,10 +284,13 @@ class InformationBuilder extends MarkdownElementBuilder {
                   size: 40,
                 ),
                 const SizedBox(width: 5),
-                Text(
-                  element.textContent,
-                  style: const TextStyle(
-                    fontSize: 18,
+                Expanded(
+                  child: AutoSizeText(
+                    element.textContent,
+                    style: const TextStyle(fontSize: 18),
+                    minFontSize: 18,
+                    maxLines: 100,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
