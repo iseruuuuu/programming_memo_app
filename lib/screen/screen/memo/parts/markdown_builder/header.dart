@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:markdown/markdown.dart' as md;
@@ -62,12 +63,15 @@ class Header extends StatelessWidget {
       key: Key(headerId),
       children: [
         Flexible(
-          child: Text(
+          child: AutoSizeText(
             text,
-            style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold),
-            maxLines: 1,
+            style: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+            ),
+            maxLines: 100,
             softWrap: false,
-            overflow: TextOverflow.clip,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
         const Padding(padding: copyButtonPaddingInset),
