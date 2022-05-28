@@ -55,6 +55,7 @@
 - [x] プレビュー画面の太文字をできるようにした(markdown_body.dartとper.dart)
 - [x] プレビュー画面のColor型が入力できるようにした。
 - [x] プレビュー画面の引用(1)を別の形で入力できるようにした。
+- [x] プレビュー画面の多重引用を別の形で入力できるようにした。
 
 ## markdownOKリスト
 - [x] 見出し
@@ -69,15 +70,14 @@
 - [x] informationの出現
 - [x] 太文字
 - [x] コードスパンの中身がCSSの <color> 型
-- [x] Blockquotes - 引用(1)
+- [x] Blockquotes - 引用
+- [x] Blockquotes - 多重引用
 
 
 - [ ] 折りたたみ
 [https://qiita.com/Qiita/items/c686397e4a0f4f11683d]
 
 - [ ] チェックボックス(デザインを修正したい。。)
-
-- [ ] Blockquotes - 引用(2)
 
 - [ ] リスト(妥協)
 - [ ] インライン表示
