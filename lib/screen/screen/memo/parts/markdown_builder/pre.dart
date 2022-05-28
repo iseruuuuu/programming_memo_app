@@ -438,3 +438,73 @@ class Quote1Builder extends MarkdownElementBuilder {
     );
   }
 }
+
+//TODO Quote(多重引用)に対して使用可能！！
+class Quote2Syntax extends md.BlockSyntax {
+  static const String _pattern = r'^\[\[Q2\]\](.*)$';
+
+  @override
+  RegExp get pattern => RegExp(_pattern);
+
+  Quote2Syntax();
+
+  @override
+  md.Node parse(md.BlockParser parser) {
+    var childLines = parseChildLines(parser);
+    var content = childLines.join('\n');
+    final md.Element el = md.Element('p', [
+      md.Element('Q2', [md.Text(content)]),
+    ]);
+    return el;
+  }
+}
+
+class Quote2Builder extends MarkdownElementBuilder {
+  @override
+  Widget visitElementAfter(md.Element element, TextStyle? preferredStyle) {
+    return Builder(
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(vertical: 15),
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+              border: Border(
+                left: BorderSide(
+                  color: Colors.grey,
+                  width: 5,
+                ),
+              ),
+            ),
+            child: Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(vertical: 15),
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                border: Border(
+                  left: BorderSide(
+                    color: Colors.grey,
+                    width: 5,
+                  ),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    element.textContent,
+                    style: const TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
