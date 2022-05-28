@@ -1,13 +1,27 @@
+import 'dart:io';
+import 'dart:ui';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:programming_memo_for_mac_app/screen/container/memo/memo_page_container.dart';
 import 'package:programming_memo_for_mac_app/screen/container/memo_list/memo_list_page_container.dart';
+import 'package:window_size/window_size.dart';
 import 'logger/logger.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isMacOS) {
+    //maxのサイズ
+    setWindowMaxSize(const Size(double.infinity, double.infinity));
+    //mac airのサイズの半分
+    setWindowMinSize(const Size(633, 768));
+  }
+
   runApp(
     ProviderScope(
       observers: [ProviderLogger()],
