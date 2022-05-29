@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:programming_memo_for_mac_app/domain/entities/memo/memo.dart';
+import 'package:programming_memo_for_mac_app/screen/screen/dialog.dart';
 import 'package:programming_memo_for_mac_app/screen/screen/keyboard_action.dart';
 import 'package:programming_memo_for_mac_app/screen/screen/loading.dart';
 import 'package:programming_memo_for_mac_app/screen/screen/memo_list/children/memo_list_card_page.dart';
@@ -103,7 +105,8 @@ class DeletedMemoListWidgets extends StatelessWidget {
                       CardAction(
                         icons: Icons.delete_forever,
                         label: memoDeletedListActionDeletePermanent,
-                        action: permanentDeleteMemo,
+                        action: (memo) =>
+                            openDialog(context, memo, permanentDeleteMemo),
                         color: Colors.red,
                       ),
                     ],
