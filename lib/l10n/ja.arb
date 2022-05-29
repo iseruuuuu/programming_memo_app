@@ -17,7 +17,7 @@
   "memoCardWillDeleteDays": "{willDeleteDays}日後に削除されます",
   "memoDeletedListNoItem": "削除済みのメモはありません",
   "memoDeletedListActionRestore": "復元",
-  "memoDeletedListActionDeletePermanent": "完全にl削除",
+  "memoDeletedListActionDeletePermanent": "完全に削除",
   "memoListNoItem": "メモはありません",
   "memoListActionOpen": "開く",
   "memoListActionDelete": "削除",
