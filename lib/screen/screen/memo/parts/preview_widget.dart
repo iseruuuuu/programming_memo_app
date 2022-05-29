@@ -1,7 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:programming_memo_for_mac_app/screen/container/memo/parts/markdown_body.dart';
+import 'package:programming_memo_for_mac_app/screen/screen/keyboard_action.dart';
 import 'package:programming_memo_for_mac_app/screen/screen/loading.dart';
 import 'package:programming_memo_for_mac_app/store/loading_state.dart';
 
@@ -51,53 +53,78 @@ class PreviewWidget extends StatelessWidget {
         loadingState == LoadingState.loading) {
       return const LoadingWidget();
     }
-    return SingleChildScrollView(
-      child: Padding(
-        padding: externalPaddingInset,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              memoTitleName,
-              style: titleStyle,
-            ),
-            const Divider(
-              color: Colors.black,
-              thickness: 2,
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              color: Colors.grey.shade50,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  title ?? memoListLoading,
-                  style: titleTextStyle,
-                  textAlign: TextAlign.start,
-                ),
+    ScrollController _controller = ScrollController();
+    var position = 0.0;
+    return Shortcuts(
+      shortcuts: <ShortcutActivator, Intent>{
+        LogicalKeySet(LogicalKeyboardKey.arrowDown): const ArrowDown(),
+        LogicalKeySet(LogicalKeyboardKey.arrowUp): const ArrowUp(),
+      },
+      child: Actions(
+        actions: <Type, Action<Intent>>{
+          ArrowDown: CallbackAction<ArrowDown>(onInvoke: (ArrowDown intent) {
+            position += 100;
+            _controller.jumpTo(position);
+          }),
+          ArrowUp: CallbackAction<ArrowUp>(onInvoke: (ArrowUp intent) {
+            if (position <= 0) {
+            } else {
+              position -= 100;
+              _controller.jumpTo(position);
+            }
+          }),
+        },
+        child: Focus(
+          autofocus: true,
+          child: SingleChildScrollView(
+            controller: _controller,
+            child: Padding(
+              padding: externalPaddingInset,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    memoTitleName,
+                    style: titleStyle,
+                  ),
+                  const Divider(
+                    color: Colors.black,
+                    thickness: 2,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.grey.shade50,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        title ?? memoListLoading,
+                        style: titleTextStyle,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                  ),
+                  const Padding(padding: internalPaddingInset),
+                  Text(
+                    memoContentName,
+                    style: titleStyle,
+                  ),
+                  const Divider(
+                    color: Colors.black,
+                    thickness: 2,
+                  ),
+                  const Padding(padding: internalPaddingInset),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.grey.shade50,
+                    child: MarkdownBodyHeaderCopiableContainer(
+                      content: content ?? memoListLoading,
+                      onCopyRequested: _onCopyRequested,
+                    ),
+                  ),
+                ],
               ),
             ),
-            const Padding(padding: internalPaddingInset),
-            Text(
-              memoContentName,
-              style: titleStyle,
-            ),
-            const Divider(
-              color: Colors.black,
-              thickness: 2,
-            ),
-            const Padding(padding: internalPaddingInset),
-
-            //内容
-            Container(
-              width: MediaQuery.of(context).size.width,
-              color: Colors.grey.shade50,
-              child: MarkdownBodyHeaderCopiableContainer(
-                content: content ?? memoListLoading,
-                onCopyRequested: _onCopyRequested,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
