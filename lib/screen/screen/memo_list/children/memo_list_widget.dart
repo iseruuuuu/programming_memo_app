@@ -96,11 +96,13 @@ class MemoListWidgets extends StatelessWidget {
                         icons: Icons.file_open,
                         label: memoListActionOpen,
                         action: selectMemo,
+                        color: Colors.blueAccent,
                       ),
                       CardAction(
                         icons: Icons.delete,
                         label: memoListActionDelete,
                         action: makeDeleteMemo,
+                        color: Colors.red,
                       ),
                     ],
                   ),

@@ -98,12 +98,14 @@ class DeletedMemoListWidgets extends StatelessWidget {
                         icons: Icons.restore,
                         label: memoDeletedListActionRestore,
                         action: restoreMemo,
+                        color: Colors.blueAccent,
                       ),
                       CardAction(
                         icons: Icons.delete_forever,
                         label: memoDeletedListActionDeletePermanent,
                         action: permanentDeleteMemo,
-                      )
+                        color: Colors.red,
+                      ),
                     ],
                   ),
                 )

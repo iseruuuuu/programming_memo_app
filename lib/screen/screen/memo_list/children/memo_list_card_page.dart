@@ -7,11 +7,13 @@ class CardAction {
   final IconData icons;
   final String label;
   final Function(Memo memo) action;
+  final Color color;
 
   const CardAction({
     required this.icons,
     required this.label,
     required this.action,
+    required this.color,
   });
 }
 
@@ -31,8 +33,6 @@ class MemoListCardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final contentSummary = (() {
       if (memo.content.length > Constants.memoContentSummaryCounts) {
-        //TODO 何文字入れるかどうかについては後で決める
-        //TODO StackOverflowしないために、あらかじめ最低大きさを決める。
         return memo.content
                 .substring(0, Constants.memoContentSummaryCounts + 40) +
             "…";
@@ -116,11 +116,12 @@ class MemoListCardPage extends StatelessWidget {
                               icon: Icon(
                                 action.icons,
                                 size: 30,
+                                color: action.color,
                               ),
                               label: Text(
                                 action.label,
-                                style: const TextStyle(
-                                  color: Colors.blueAccent,
+                                style: TextStyle(
+                                  color: action.color,
                                   fontSize: 20,
                                 ),
                               ),
