@@ -1,20 +1,8 @@
 name: programming_memo_for_mac_app
 description: A new Flutter project.
 
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
 environment:
@@ -33,14 +21,6 @@ dependencies:
       path: plugins/window_size
       ref: a738913c8ce2c9f47515382d40827e794a334274
 
-#  window_size:
-#    git:
-#      url: git://github.com/google/flutter-desktop-embedding
-#      path: plugins/window_size
-#      ref: e48abe7
-
-
-
   hooks_riverpod: any
   state_notifier: any
   freezed_annotation: any
@@ -51,7 +31,7 @@ dependencies:
   url_launcher: ^6.1.0
   universal_io: ^2.0.4
   auto_size_text: ^3.0.0
-#  desktop_window: ^0.4.0
+  icons_launcher: ^1.1.9
 
 dev_dependencies:
   flutter_test:
@@ -70,3 +50,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+flutter_icons:
+  image_path: 'assets/app_icon.png'
+  image_path_macos: 'assets/app_icon.png'
+  remove_alpha_macos: false
+  android: false
+  ios: false
+  macos: true
