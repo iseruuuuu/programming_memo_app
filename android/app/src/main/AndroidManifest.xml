@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.programming_memo_for_mac_app">
    <application
-        android:label="programming_memo_for_mac_app"
+        android:label="メモ for markdown"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

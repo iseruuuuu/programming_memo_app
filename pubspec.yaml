@@ -21,6 +21,11 @@ dependencies:
       path: plugins/window_size
       ref: a738913c8ce2c9f47515382d40827e794a334274
 
+  flutter_app_name:
+    git:
+      url: https://github.com/f-prime/flutter_app_name
+      ref: fcd55ef026ae00ce95e1083d928d54f02a570fae
+
   hooks_riverpod: any
   state_notifier: any
   freezed_annotation: any
@@ -58,3 +63,6 @@ flutter_icons:
   android: false
   ios: false
   macos: true
+
+flutter_app_name:
+  name: "メモ for markdown"
