@@ -55,10 +55,10 @@ class MemoPage extends StatelessWidget {
             child: Focus(
               autofocus: true,
               child: Scaffold(
-                backgroundColor: CupertinoColors.extraLightBackgroundGray,
+                backgroundColor: const Color(0xFFF0EFF5),
                 appBar: AppBar(
-                  backgroundColor: Colors.grey.shade800,
-                  elevation: 2,
+                  backgroundColor: const Color(0xFFF7F7F9),
+                  elevation: 10,
                   automaticallyImplyLeading: false,
                   actions: [
                     IconButton(
@@ -66,13 +66,14 @@ class MemoPage extends StatelessWidget {
                       iconSize: 40,
                       icon: const Icon(
                         Icons.list,
-                        color: Colors.white,
+                        color: Color(0xFF4E4E4E),
                       ),
                     ),
                   ],
                   bottom: TabBar(
-                    indicatorWeight: 10,
-                    indicatorColor: CupertinoColors.extraLightBackgroundGray,
+                    indicatorWeight: 5,
+                    indicatorColor: const Color(0xFF4E4E4E),
+                    labelColor: const Color(0xFF4E4E4E),
                     tabs: <Widget>[
                       Tab(text: memoTabEditor),
                       Tab(text: memoTabPreview),

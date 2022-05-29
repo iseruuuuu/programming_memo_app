@@ -39,13 +39,14 @@ class MemoListPage extends StatelessWidget {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
-          backgroundColor: CupertinoColors.extraLightBackgroundGray,
+          backgroundColor: const Color(0xFFF0EFF5),
           appBar: AppBar(
-            backgroundColor: Colors.grey.shade800,
-            elevation: 0,
+            backgroundColor: const Color(0xFFF7F7F9),
+            elevation: 10,
             bottom: const TabBar(
-              indicatorWeight: 10,
-              indicatorColor: CupertinoColors.extraLightBackgroundGray,
+              indicatorWeight: 5,
+              indicatorColor: Color(0xFF4E4E4E),
+              labelColor: Color(0xFF4E4E4E),
               tabs: <Widget>[
                 Tab(text: 'メモ一覧'),
                 Tab(text: 'ゴミ箱'),
