@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:programming_memo_for_mac_app/screen/container/memo/parts/editor.dart';
 import 'package:programming_memo_for_mac_app/screen/container/memo/parts/preview.dart';
+import 'package:programming_memo_for_mac_app/screen/example_screen/example_screen.dart';
 import 'package:programming_memo_for_mac_app/screen/screen/keyboard_action.dart';
 
 class MemoPage extends StatelessWidget {
@@ -60,6 +61,22 @@ class MemoPage extends StatelessWidget {
                   backgroundColor: const Color(0xFFF7F7F9),
                   elevation: 10,
                   automaticallyImplyLeading: false,
+                  leading: TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ExampleScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      '?',
+                      style: TextStyle(
+                        color: Color(0xFF4E4E4E),
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
                   actions: [
                     IconButton(
                       onPressed: openMemoList,
