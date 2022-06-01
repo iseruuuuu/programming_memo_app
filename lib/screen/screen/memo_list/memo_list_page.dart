@@ -11,12 +11,12 @@ class MemoListPage extends StatelessWidget {
   final Function() reloadMemo;
   final LoadingState loadingState;
 
-  const MemoListPage(
-      {required this.loadingState,
-      required this.createMemo,
-      required this.reloadMemo,
-      Key? key})
-      : super(key: key);
+  const MemoListPage({
+    required this.loadingState,
+    required this.createMemo,
+    required this.reloadMemo,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
