@@ -4,7 +4,12 @@ import 'package:programming_memo_for_mac_app/screen/screen/memo/parts/editor_wid
 import 'package:programming_memo_for_mac_app/store/memo/memo_provider.dart';
 
 class EditorWidgetContainer extends ConsumerWidget {
-  const EditorWidgetContainer({Key? key}) : super(key: key);
+  final void Function() onSave;
+
+  const EditorWidgetContainer({
+    required this.onSave,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -32,6 +37,7 @@ class EditorWidgetContainer extends ConsumerWidget {
       loadingState: loadingState,
       onTitleChanged: _onTitleChanged,
       onContentChanged: _onContentChanged,
+      onSave: onSave,
     );
   }
 }

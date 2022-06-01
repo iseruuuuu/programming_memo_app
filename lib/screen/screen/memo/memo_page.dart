@@ -97,10 +97,10 @@ class MemoPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                body: const TabBarView(
+                body: TabBarView(
                   children: <Widget>[
-                    EditorWidgetContainer(),
-                    PreviewWidgetContainer(),
+                    EditorWidgetContainer(onSave: _storeMemo),
+                    const PreviewWidgetContainer(),
                   ],
                 ),
                 floatingActionButton: SizedBox(

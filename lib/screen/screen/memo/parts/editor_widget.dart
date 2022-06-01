@@ -9,6 +9,7 @@ class EditorWidget extends StatelessWidget {
   final LoadingState loadingState;
   final void Function(String text) onTitleChanged;
   final void Function(String text) onContentChanged;
+  final void Function() onSave;
 
   const EditorWidget({
     required this.title,
@@ -16,6 +17,7 @@ class EditorWidget extends StatelessWidget {
     required this.loadingState,
     required this.onTitleChanged,
     required this.onContentChanged,
+    required this.onSave,
     Key? key,
   }) : super(key: key);
 
@@ -55,8 +57,25 @@ class EditorWidget extends StatelessWidget {
                 border: outlineInputBorder,
                 hintText: memoTitleHint,
               ),
+              toolbarOptions: const ToolbarOptions(
+                copy: true,
+                selectAll: true,
+                paste: true,
+                cut: true,
+              ),
+              // selectionControls: _mainContentSelectionController,
+              enableInteractiveSelection: true,
+              // keyboardType: TextInputType.text,
+              // focusNode: _focusNode,
+              keyboardType: TextInputType.multiline,
+
+              autocorrect: false,
               initialValue: title,
               onChanged: onTitleChanged,
+              autofocus: true,
+              onFieldSubmitted: (value) {
+                onSave();
+              }
             ),
             const Padding(padding: internalPaddingInset),
             Text(
@@ -70,6 +89,8 @@ class EditorWidget extends StatelessWidget {
                 border: outlineInputBorder,
                 hintText: memoContentHint,
               ),
+              autofocus: true,
+              autocorrect: false,
               initialValue: content,
               keyboardType: TextInputType.multiline,
               maxLines: null,
