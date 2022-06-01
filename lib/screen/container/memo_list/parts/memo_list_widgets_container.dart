@@ -40,3 +40,12 @@ class MemoListWidgetsContainer extends ConsumerWidget {
     );
   }
 }
+
+//TODO indexエラーでの解決策
+
+// _permanentDeleteMemo(Memo memo) {
+//   final deletedMemoList = ref.read(memoStateProvider).deletedMemoList;
+//   ref
+//       .read(memoStateProvider.notifier)
+//       .permanentDeleteMemoAll(memo, deletedMemoList);
+// }
