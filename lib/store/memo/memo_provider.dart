@@ -161,3 +161,46 @@ class EditorNotifier extends StateNotifier<MemoState> {
     deletedMemoList: deletedMemoList
   );
 }
+
+//TODO indexエラーでの解決策
+
+/*TODO メモリスト
+void allDelete(
+      Memo memo, List<Memo> memoList, List<Memo> deletedMemoList) async {
+
+    final newMemo = await memoUseCase.makeDeleteMemo(memoList[1]);
+    final removedMemoList = [...memoList]..remove([]);
+    final newDeletedMemoList = [newMemo, ...deletedMemoList];
+    if (removedMemoList.isEmpty) {
+      _setMemoAll(null, removedMemoList, newDeletedMemoList);
+      createMemo(removedMemoList);
+      // _setMemoAll(removedMemoList.first, [], []);
+    } else {
+      // _setMemoAll(removedMemoList.first, removedMemoList, newDeletedMemoList);
+      _setMemoAll(removedMemoList.first, removedMemoList, newDeletedMemoList);
+    }
+
+    try {
+      final newMemo = await memoUseCase.makeDeleteMemo(memo);
+    } catch (e) {
+      // TODO(Niccari): Error handling
+    }
+  }
+ */
+
+/*TODO ゴミ箱リスト
+void permanentDeleteMemo(Memo memo, List<Memo> deletedMemoList) async {
+    try {
+      await memoUseCase.deleteMemo(deletedMemoList[1]);
+
+      print(deletedMemoList[0]);
+      print(deletedMemoList[1]);
+
+      _setDeletedMemoList(
+          [...deletedMemoList]..removeWhere((m) => m.id == memo.id));
+    } catch (e) {
+      // TODO(Niccari): Error handling
+    }
+  }
+
+ */
